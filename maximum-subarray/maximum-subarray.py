@@ -1,9 +1,25 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         
-        return self.approach_2(nums)
+        return self.approach_3(nums)
     
+    def approach_3(self, nums: List[int]) -> int:
+        a = 0
+        m =  - sys.maxsize - 1
+        
+        for num in nums:
+            a += num
+            
+            if a < num:
+                a = num
+                
+            if m < a:
+                m = a
+                
+        return m
     
+    # TC = O(n)
+    # max func is O(n). This can be improved.
     def approach_2(self, nums: List[int]) -> int:
         
         m = nums[0]
