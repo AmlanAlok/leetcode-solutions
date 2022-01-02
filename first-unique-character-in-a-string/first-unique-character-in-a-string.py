@@ -3,6 +3,8 @@ class Solution:
         return self.ans_3(s)
     
     # code from solution with fastest time
+    # Runtime: 20 ms, faster than 100.00% of Python3 online submissions for First Unique Character in a String.
+    # Memory Usage: 14.6 MB, less than 21.10% of Python3 online submissions for First Unique Character in a String.
     def ans_3(self, s: str) -> int:
         
         min_index = len(s)
@@ -10,10 +12,10 @@ class Solution:
         for c in 'abcdefghijklmnopqrstuvwxyz':
             print(c)
             i = s.find(c)       # TC = O(n*m), n = length of string and length of substring to find, returns first positioin, else -1
-            x = s.rfind(c)      # TC = O(n*m), n = length of string and length of substring to find, returns last position, else -1
+            # x = s.rfind(c)      # TC = O(n*m), n = length of string and length of substring to find, returns last position, else -1
             # print(i, x)
             
-            if i != -1 and i == x:
+            if i != -1 and i == s.rfind(c):
                 min_index = min(min_index, i)
         
         return min_index if min_index != len(s) else -1     # This is a neat trick to memorize
