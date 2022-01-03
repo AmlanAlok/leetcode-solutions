@@ -5,6 +5,7 @@ class Solution:
         
     # TC = O(n+m)
     # SC = O(n+m)
+    # Runtime: 24 ms, faster than 99.89% of Python3 online submissions for Valid Anagram.
     def ans_2(self, s: str, t: str) -> bool:
         # if len(s) != len(t):
         #     return False
