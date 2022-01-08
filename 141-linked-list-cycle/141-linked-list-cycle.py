@@ -10,7 +10,7 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        return self.ans_4(head)
+        return self.ans_3(head)
     
     # current best time solution
     def ans_4(self, head: Optional[ListNode]) -> bool:
