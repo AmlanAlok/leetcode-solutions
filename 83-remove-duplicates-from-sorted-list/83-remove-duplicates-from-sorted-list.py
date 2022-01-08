@@ -11,7 +11,7 @@ class Solution:
     
     def ans_1(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-        if head is None:
+        if not head:
             return head
         
         # start = head
