@@ -10,9 +10,26 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        return self.ans_3(head)
+        return self.ans_4(head)
     
+    # current best time solution
+    def ans_4(self, head: Optional[ListNode]) -> bool:
+        if not head:
+            return False 
+        slow, fast = head, head
+        while True:
+            slow = slow.next
+            fast = fast.next
+            if fast != None:
+                fast = fast.next
+            if slow == None or fast == None:
+                return False
+            if slow == fast:
+                return True
     
+    # approach 2 implementation
+    # TC = O(N)
+    # SC = O(1)
     def ans_3(self, head: Optional[ListNode]) -> bool:
         
         if head is None:
@@ -30,6 +47,8 @@ class Solution:
         return True
     
     # My approach after referring solution 2
+    # TC = O(N)
+    # SC = O(1)
     def ans_2(self, head: Optional[ListNode]) -> bool:
         
         if head is None:
@@ -50,8 +69,10 @@ class Solution:
                 
         return False
             
-            
-        
+    
+    # approach 1 implementation
+    # TC = O(N)
+    # SC = O(N)
     def ans_1(self, head: Optional[ListNode]) -> bool:
         
         d = set()
