@@ -10,8 +10,26 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        return self.ans_2(head)
+        return self.ans_3(head)
     
+    
+    def ans_3(self, head: Optional[ListNode]) -> bool:
+        
+        if head is None:
+            return False
+        
+        slow = head
+        fast = head.next
+        
+        while slow != fast:
+            if fast is None or fast.next is None:
+                return None
+            slow = slow.next
+            fast = fast.next.next
+        
+        return True
+    
+    # My approach after referring solution 2
     def ans_2(self, head: Optional[ListNode]) -> bool:
         
         if head is None:
