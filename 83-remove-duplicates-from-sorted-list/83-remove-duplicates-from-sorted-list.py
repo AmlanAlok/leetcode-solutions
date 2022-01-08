@@ -20,7 +20,8 @@ class Solution:
         prev = head
         c = head.next
         
-        while prev is not None and c is not None:
+        # while prev is not None and c is not None:
+        while prev and c:
             # print(c.val, prev.val)
             if prev.val == c.val:
                 prev.next = c.next
