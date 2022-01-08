@@ -9,14 +9,13 @@ class Solution:
         return self.ans_1(head)
         
     
+    # TC = O(N)
+    # SC = O(1)
     def ans_1(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
         if not head:
             return head
         
-        # start = head
-        
-        # s = ListNode(0, head)
         prev = head
         c = head.next
         
