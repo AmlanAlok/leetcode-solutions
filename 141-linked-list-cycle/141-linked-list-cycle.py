@@ -10,7 +10,29 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        return self.ans_1(head)
+        return self.ans_2(head)
+    
+    def ans_2(self, head: Optional[ListNode]) -> bool:
+        
+        if head is None:
+            return False
+        
+        slow = head
+        fast = head.next
+        
+        while slow != None and fast != None:
+            
+            if slow == fast:
+                return True
+            if fast.next == None or slow.next == None:
+                return False
+            
+            fast = fast.next.next
+            slow = slow.next
+                
+        return False
+            
+            
         
     def ans_1(self, head: Optional[ListNode]) -> bool:
         
@@ -21,20 +43,9 @@ class Solution:
             if c in d:
                 return True
             d.add(c)
-            # print(d)
             c = c.next
-        
-        # print(d)
-        
         return False
 
-        # nodes_seen = set()
-        # while head is not None:
-        #     if head in nodes_seen:
-        #         return True
-        #     nodes_seen.add(head)
-        #     head = head.next
-        # return False
             
     
         
