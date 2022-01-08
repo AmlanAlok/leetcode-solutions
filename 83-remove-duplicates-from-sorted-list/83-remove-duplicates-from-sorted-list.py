@@ -25,7 +25,7 @@ class Solution:
             if prev.val == c.val:
                 prev.next = c.next
             else:    
-                prev = prev.next
+                prev = c
             c = c.next
         
         return head
