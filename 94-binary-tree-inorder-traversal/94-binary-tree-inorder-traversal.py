@@ -1,3 +1,4 @@
+from collections import deque
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -6,7 +7,7 @@
 #         self.right = right
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        return self.ans_2(root)
+        return self.ans_3(root)
     
     def ans_1(self, root):
         
@@ -36,3 +37,52 @@ class Solution:
             return []
         else:
             return self.ans_2(root.left) + [root.val] + self.ans_2(root.right)
+    
+    '''
+    Stack
+    TC = O(n)
+    SC = O(n)
+    '''
+    def ans_3(self, root):    
+        
+        if root is None:
+            return []
+        
+        stack = deque()
+        curr = root
+        ans = []
+        
+        while stack or curr:
+            
+            if curr:
+                stack.append(curr)
+                curr = curr.left
+            else:
+                curr = stack.pop()
+                ans.append(curr.val)
+                curr = curr.right
+                
+        return ans
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
