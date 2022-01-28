@@ -25,6 +25,11 @@ class Solution:
             
         return e
     
+    '''
+    Recursion
+    TC = O(n)
+    SC = O(n)
+    '''
     def ans_2(self, root):
         
         if root is None:
