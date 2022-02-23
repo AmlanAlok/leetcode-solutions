@@ -21,8 +21,10 @@ class Solution:
         
         for i,v in enumerate(nums):
             
-            if target-v in d and d[target-v] != i:
-                return [i, d[target-v] ]
+            c= target-v
+            
+            if c in d and d[c] != i:
+                return [i, d[c] ]
             else:
                 d[v] = i
         
