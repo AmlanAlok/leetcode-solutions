@@ -1,7 +1,7 @@
 class Solution:
     def shuffle(self, nums: List[int], n: int) -> List[int]:
         
-        return self.ans3(nums, n)
+        return self.ans2(nums, n)
     
     '''
     This solution which I did using a queue has constant space
