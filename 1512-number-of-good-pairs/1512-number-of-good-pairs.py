@@ -2,7 +2,12 @@ class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:
         
         return self.ans1(nums)
-        
+    
+    '''
+    TC = O(n)
+    SC = O(n)
+    This is also the approach for the best time in LC
+    '''
     def ans1(self, nums: List[int]) -> int:
         d={}
         p = 0
