@@ -6,7 +6,7 @@ class Solution:
     '''
     TC = O(n)
     SC = O(n)
-    This is also the approach for the best time in LC
+    This is also the approach for the best time in LC = 16 ms
     '''
     def ans1(self, nums: List[int]) -> int:
         d={}
