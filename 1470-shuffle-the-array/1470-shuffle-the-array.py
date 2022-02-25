@@ -1,7 +1,7 @@
 class Solution:
     def shuffle(self, nums: List[int], n: int) -> List[int]:
         
-        return self.ans2(nums, n)
+        return self.ans3(nums, n)
     
     def ans2(self, nums: List[int], n: int) -> List[int]:
         from collections import deque
@@ -28,6 +28,13 @@ class Solution:
         
         return nums
         
+    def ans3(self, nums: List[int], n: int) -> List[int]:
+        y=[]
+        x=len(nums)//2
+        for i in range(x):
+            y.append(nums[i])
+            y.append(nums[i+n])
+        return(y)
         
         
     def ans1(self, nums: List[int], n: int) -> List[int]:
