@@ -1,6 +1,9 @@
 class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:
         
+        return self.ans1(nums)
+        
+    def ans1(self, nums: List[int]) -> int:
         d={}
         p = 0
         
