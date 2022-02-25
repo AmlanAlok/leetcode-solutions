@@ -1,6 +1,10 @@
 class Solution:
     def shuffle(self, nums: List[int], n: int) -> List[int]:
         
+        return self.ans1(nums, n)
+        
+    def ans1(self, nums: List[int], n: int) -> List[int]:
+        
         x = nums[:n]
         y = nums[n:]
         
