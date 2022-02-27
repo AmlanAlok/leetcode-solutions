@@ -30,5 +30,20 @@ class Solution:
         
         return []
             
+    def p2(self, nums: List[int], target: int) -> List[int]:
+        
+        d = {}
+        
+        for i in range(nums):
             
+            c= target-v
+            
+            if c in d and d[c] != i:
+                return [i, d[c] ]
+            else:
+                d[v] = i
+        
+        return []
+    
+    
         
