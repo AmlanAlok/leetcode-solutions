@@ -1,6 +1,7 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         
+        # return self.ans3(numbers, target)
         return self.ans3(numbers, target)
     
     
@@ -63,3 +64,23 @@ class Solution:
                 return [d[c]+1,i+1]
             else:
                 d[v] = i
+                
+                
+    
+    def p1(self, numbers: List[int], target: int) -> List[int]:
+        
+        nums= numbers
+        i=0
+        j=len(nums)-1
+        
+        while i<j:
+            s = nums[i] + nums[j]
+            
+            if s>target:
+                j-=1
+            elif s<target:
+                i+=1
+            else:
+                return [i+1, j+1]
+            
+        return [-1,-1]
