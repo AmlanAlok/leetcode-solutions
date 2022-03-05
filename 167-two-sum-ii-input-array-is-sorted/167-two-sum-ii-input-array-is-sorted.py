@@ -2,9 +2,12 @@ class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         
         # return self.ans3(numbers, target)
-        return self.ans3(numbers, target)
+        return self.p1(numbers, target)
     
-    
+    '''
+    TC = O(n)
+    Sc = O(1)
+    '''
     def ans3(self, numbers: List[int], target: int) -> List[int]:
         
         nums=numbers
