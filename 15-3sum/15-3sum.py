@@ -19,8 +19,12 @@ class Solution:
             i = k+1
             j=len(nums)-1
             
+            mi = nums[i]
+            mj=nums[j]
+            
             while i<j:
                 # print(nums[k])
+                
                 
                 s = nums[i]+nums[j]+nums[k]
                 
@@ -33,25 +37,18 @@ class Solution:
                     
                     if x not in ans:
                         ans.append(x)
-                        
-                           
+                                                   
                     i+=1
                     j-=1
-                        # break
+                    
+                    while i<j and nums[i]==nums[i-1]:
+                        i+=1                    
+
             m = nums[k]
                 
-        
         return ans
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
     def fail1(self, nums: List[int]) -> List[List[int]]:
         # print('start')
         if nums is [] or nums is [0]:
