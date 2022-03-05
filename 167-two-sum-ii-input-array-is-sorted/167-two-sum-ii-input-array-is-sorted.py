@@ -69,7 +69,7 @@ class Solution:
     
     def p1(self, numbers: List[int], target: int) -> List[int]:
         
-        nums= numbers
+        nums = numbers
         i=0
         j=len(nums)-1
         
