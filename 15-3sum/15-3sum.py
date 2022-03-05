@@ -35,8 +35,8 @@ class Solution:
                 else:
                     x = [nums[k],nums[i],nums[j]]
                     
-                    if x not in ans:
-                        ans.append(x)
+                    # if x not in ans:
+                    ans.append(x)
                                                    
                     i+=1
                     j-=1
