@@ -102,8 +102,6 @@ class Solution:
 
         return a
     
-    
-    
     def ans2(self, nums: List[int]) -> List[List[int]]:
         
         nums.sort()
@@ -141,6 +139,7 @@ class Solution:
                 i+=1
                     
                 
+                # We cannot do this bcuz [-4,2,2], as i and j can have the same value in ans, we cannot skip repeating values when scanning through the array
                 
                 # if i<l and nums[i]==nums[i-1]:
                 #     while i<l and nums[i]==nums[i-1]:
