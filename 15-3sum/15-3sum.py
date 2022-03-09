@@ -1,6 +1,7 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        return self.ans1(nums)
+        
+        return self.ans2(nums)
     
     def ans1(self, nums: List[int]) -> List[List[int]]:
         
@@ -35,7 +36,7 @@ class Solution:
                 else:
                     x = [nums[k],nums[i],nums[j]]
                     
-                    # if x not in ans:
+                    # if x not in ans:  # this line was adding a lot of TC. removing this lowered time from 4000ms to 700ms
                     ans.append(x)
                                                    
                     i+=1
@@ -47,7 +48,6 @@ class Solution:
             m = nums[k]
                 
         return ans
-        
 
     def fail1(self, nums: List[int]) -> List[List[int]]:
         # print('start')
@@ -101,3 +101,56 @@ class Solution:
                             a.append([x,k,c])
 
         return a
+    
+    
+    
+    def ans2(self, nums: List[int]) -> List[List[int]]:
+        
+        nums.sort()
+        print(nums)
+        l = len(nums)
+        ans=[]
+        k=0
+        
+        # for k in range(l):
+        while k<l-2:
+            
+            i = k+1
+            
+            d={}
+            
+            while i<l:
+                
+                c = -1*nums[k] - nums[i]
+                
+                if c in d:
+                    ans.append([nums[k],c,nums[i]])
+                    
+                    # i+=1
+                    
+                    # if i<l and nums[i]==nums[i-1]:
+                    #     while i<l and nums[i]==nums[i-1]:
+                    #         i+=1
+                    if i<l-1 and nums[i]==nums[i+1]:
+                        while i<l-1 and nums[i]==nums[i+1]:
+                            i+=1
+                            
+                else:
+                    d[nums[i]] = i
+                
+                i+=1
+                    
+                
+                
+                # if i<l and nums[i]==nums[i-1]:
+                #     while i<l and nums[i]==nums[i-1]:
+                #         i+=1
+            
+            k+=1
+            
+            if nums[k]==nums[k-1]:
+                while k<l-2 and nums[k]==nums[k-1]:
+                    k+=1
+        
+        return ans
+                    
