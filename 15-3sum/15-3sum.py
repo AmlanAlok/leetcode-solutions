@@ -1,8 +1,9 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         
-        return self.ans2(nums)
+        return self.ans3(nums)
     
+    # A1 - 2 pointers
     def ans1(self, nums: List[int]) -> List[List[int]]:
         
         if len(nums) == 0:
@@ -102,6 +103,7 @@ class Solution:
 
         return a
     
+    # Approach 2 - Using hashmap
     def ans2(self, nums: List[int]) -> List[List[int]]:
         
         nums.sort()
@@ -152,4 +154,55 @@ class Solution:
                     k+=1
         
         return ans
+    
+    
+    def ans3(self, nums: List[int]) -> List[List[int]]:
+        
+        
+        l = len(nums)
+        ans=set()
+        d1={}
+        d3={}
+        
+        for k in range(l-2):
+            
+            if nums[k] not in d1:
+                
+                d1[nums[k]]=k
+                i=k+1
+                d2={}
+                
+                while i<l:
+
+                    c = -1*nums[k] - nums[i]
+
+                    if c in d2 and d2[c] != i:
+                        # x = [nums[k],c,nums[i]]
+                        # x.sort()
+
+                        # if x not in d3:
+                        # ans.append(x)
+                        x = (nums[k],c,nums[i])
+                        ans.add(tuple(sorted(x)))
+
+                    else:
+                        d2[nums[i]]=i
                     
+                    i+=1
+                    
+                
+                
+            # else:
+            #     d1[nums[k]]=k
+        return ans
+    
+    
+    '''
+    Test Cases
+    [-1,0,1,2,-1,-4,2]
+    [-4,2,2]
+    [0,0,0]
+    [0,0,0,0]
+    '''
+    
+    
