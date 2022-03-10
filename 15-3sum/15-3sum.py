@@ -182,6 +182,8 @@ class Solution:
 
                         # if x not in d3:
                         # ans.append(x)
+                        
+                        # This is a very important trick
                         x = (nums[k],c,nums[i])
                         ans.add(tuple(sorted(x)))
 
@@ -203,6 +205,10 @@ class Solution:
     [-4,2,2]
     [0,0,0]
     [0,0,0,0]
+    
+    How to track duplicate lists in a set?
+    x = (nums[k],c,nums[i])
+    ans.add(tuple(sorted(x)))
     '''
     
     
