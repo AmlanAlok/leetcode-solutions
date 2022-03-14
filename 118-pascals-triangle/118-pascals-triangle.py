@@ -1,9 +1,9 @@
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
-        return self.ans2(numRows)
+        return self.ans1(numRows)
     
         
-    def ans_1(self, numRows: int) -> List[List[int]]:
+    def ans1(self, numRows: int) -> List[List[int]]:
         
         ans = []
         
