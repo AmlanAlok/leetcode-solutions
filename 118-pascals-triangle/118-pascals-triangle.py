@@ -1,6 +1,6 @@
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
-        return self.ans1(numRows)
+        return self.ans2(numRows)
     
         
     def ans1(self, numRows: int) -> List[List[int]]:
