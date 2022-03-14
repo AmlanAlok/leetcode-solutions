@@ -28,25 +28,26 @@ class Solution:
         n = numRows
         a = []
         
-        if n>=1:
-            a.append([1])
-        if n>=2:
-            a.append([1,1])
-        
-        i=3
+        i=1
         
         while i<=n:
             
-            x = [None]*i
-            x[0], x[-1] = 1, 1
+            if i==1:
+                a.append([1])
+            if i==2:
+                a.append([1,1])
+            if i>2:
+                x = [None]*i
+                x[0], x[-1] = 1, 1
+
+                j=1
+
+                while j<(len(x)-1):
+                    x[j] = a[i-2][j] + a[i-2][j-1]
+                    j+=1
+
+                a.append(x)
             
-            j=1
-            
-            while j<(len(x)-1):
-                x[j] = a[i-2][j] + a[i-2][j-1]
-                j+=1
-                
-            a.append(x)
             i+=1
         
         return a
