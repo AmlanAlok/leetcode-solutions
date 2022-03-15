@@ -1,3 +1,5 @@
+from collections import deque
+
 class Solution:
     def isValid(self, s: str) -> bool:
         
@@ -5,12 +7,7 @@ class Solution:
     
     def ans1(self, s: str) -> bool:
         
-        from collections import deque
-        
         a=deque()
-        # b=deque()
-        # c=deque()
-        # f = True
         
         for i,v in enumerate(s):
             
