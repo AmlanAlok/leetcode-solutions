@@ -9,33 +9,15 @@ class Solution:
         
         a=deque()
         
-        for i,v in enumerate(s):
+        for v in s:
             
-            if v=='(':
-                a.append('(')
-            elif v==')':
-                if a and a[-1] == '(':
+            if a:
+                if v==')' and a[-1] == '(' or v=='}' and a[-1]=='{' or v == ']' and a[-1]=='[':
                     a.pop()
-                else:
-                    return False
-                
-            elif v=='{':
-                a.append('{')
-            elif v=='}':
-                if a and a[-1] == '{':
-                    a.pop()
-                else:
-                    return False
-                
-            elif v=='[':
-                a.append('[')
-            elif v==']':
-                if  a and a[-1] == '[':
-                    a.pop()
-                else:
-                    return False
-        
-        # print(len(a), len(b), len(c))
+                    continue
+            
+            a.append(v)
+            
         if len(a)==0:
             return True
         
