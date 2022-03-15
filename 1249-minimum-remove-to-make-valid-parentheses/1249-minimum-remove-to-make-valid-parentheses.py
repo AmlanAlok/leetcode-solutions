@@ -5,6 +5,7 @@ class Solution:
         
         return self.ans1(s)
     
+    # my atempt - very inefficient
     def ans1(self, s: str) -> str:
         
         a=deque()
@@ -30,7 +31,7 @@ class Solution:
             #     v=v-1
             # s = s[:v] + s[v+1:]
             # s[i] = '.'
-        for i, v  in enumerate(s):
+        for i, v in enumerate(s):
             
             if i not in b:
                 ans.append(v)
