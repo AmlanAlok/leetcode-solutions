@@ -18,8 +18,6 @@ class Solution:
             
             a.append(v)
             
-        if len(a)==0:
-            return True
-        
-        return False
+        return len(a)==0
+            
         
