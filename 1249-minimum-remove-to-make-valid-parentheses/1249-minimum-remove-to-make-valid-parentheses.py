@@ -3,7 +3,7 @@ from collections import deque
 class Solution:
     def minRemoveToMakeValid(self, s: str) -> str:
         
-        return self.ans1(s)
+        return self.ans2(s)
     
     # my atempt - very inefficient
     def ans1(self, s: str) -> str:
@@ -41,6 +41,27 @@ class Solution:
 
         return ''.join(ans)
                 
-            
+    def ans2(self, s: str) -> str:
+        
+        if not s:
+            return None
+        
+        stack = []
+        char_array = list(s)
+        
+        for idx, char in enumerate(s):
+            if char == ")":
+                if stack:
+                    stack.pop()
+                else:
+                    char_array[idx] = ""
+            elif char == "(":
+                stack.append(idx)
+        
+        while stack:
+            idx = stack.pop()
+            char_array[idx] = ""
+        
+        return "".join(char_array)
             
         
