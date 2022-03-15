@@ -40,8 +40,35 @@ class Solution:
         print(ans)
 
         return ''.join(ans)
-                
+                      
+    '''
+    My attempt at a more efficient solution - copy of ans3
+    '''
     def ans2(self, s: str) -> str:
+        
+        a=[]
+        x=list(s)
+        
+        for i,v in enumerate(x):
+            
+            if v=='(':
+                a.append(i)
+            if v==')':
+                if a:
+                    a.pop()
+                else:
+                    x[i]=''
+            
+        while a:
+            i = a.pop()
+            x[i]=''
+            
+        return ''.join(x)
+                  
+    '''
+    60 ms ans from LC
+    '''
+    def ans3(self, s: str) -> str:
         
         if not s:
             return None
@@ -63,28 +90,6 @@ class Solution:
             char_array[idx] = ""
         
         return "".join(char_array)
-            
-    def ans3(self, s: str) -> str:
-        
-        a=[]
-        x=list(s)
-        
-        for i,v in enumerate(x):
-            
-            if v=='(':
-                a.append(i)
-            if v==')':
-                if a:
-                    a.pop()
-                else:
-                    x[i]=''
-            
-        while a:
-            i = a.pop()
-            x[i]=''
-            
-        return ''.join(x)
-                    
             
             
             
