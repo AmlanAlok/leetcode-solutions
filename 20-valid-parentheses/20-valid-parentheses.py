@@ -3,7 +3,7 @@ from collections import deque
 class Solution:
     def isValid(self, s: str) -> bool:
         
-        return self.ans2(s)
+        return self.p1(s)
     
     def ans1(self, s: str) -> bool:
         
@@ -20,7 +20,7 @@ class Solution:
             
         return len(a)==0
     
-    def ans2(self, s: str) -> bool:
+    def p1(self, s: str) -> bool:
         
         a = []
         
