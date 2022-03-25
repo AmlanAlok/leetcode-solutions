@@ -3,7 +3,7 @@ from collections import deque
 class Solution:
     def isValid(self, s: str) -> bool:
         
-        return self.ans1(s)
+        return self.ans2(s)
     
     def ans1(self, s: str) -> bool:
         
@@ -19,5 +19,21 @@ class Solution:
             a.append(v)
             
         return len(a)==0
+    
+    def ans2(self, s: str) -> bool:
+        
+        a = []
+        
+        for i in s:
+            
+            if a:
+                if (i == '}' and a[-1] == '{') or (i == ')' and a[-1] == '(') or (i == ']' and a[-1] == '['):
+                    a.pop()
+                    continue
+            
+            a.append(i)
+        
+        return len(a)==0
+
             
         
