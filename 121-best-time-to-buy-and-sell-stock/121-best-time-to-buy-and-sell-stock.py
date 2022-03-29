@@ -32,8 +32,7 @@ class Solution:
             
             p = nums[i]-nums[b]
             
-            if p > 0:
-                if p > m:
+            if p > 0 and p > m:
                     m=p
             if p<0:
                 b=i
