@@ -3,8 +3,9 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        self.ans1(matrix)
+        self.ans2(matrix)
         
+    '''Approach 1'''
     def ans1(self, matrix: List[List[int]]) -> None:
         
         r = len(matrix)
@@ -24,8 +25,38 @@ class Solution:
                 
                 if i in rset or j in cset:
                     matrix[i][j]=0
-        
+    
+    '''Approach 1'''
     def ans2(self, matrix: List[List[int]]) -> None:
+        
+        r = len(matrix)
+        c = len(matrix[0])
+        
+        rset, cset = set(), set()
+        
+        for i in range(r):
+            for j in range(c):
+                
+                if matrix[i][j]==0:
+                    rset.add(i)
+                    cset.add(j)
+        
+        for i in rset:
+            matrix[i][:] = [0]*c
+            
+        for j in cset:
+            for i in range(r):
+                matrix[i][j] = 0
+
+#         for i in range(r):
+#             for j in range(c):
+                
+#                 if i in rset or j in cset:
+#                     matrix[i][j]=0
+    
+    
+    '''Approach 2'''
+    def fail2(self, matrix: List[List[int]]) -> None:
         
         r=len(matrix)
         c=len(matrix[0])
@@ -34,11 +65,11 @@ class Solution:
             for j in range(c):
                 
                 if matrix[i][j]==0:
-                    matrix[i][0]=0
-                    matrix[0][j]=0
+                    matrix[i][0]='z'
+                    matrix[0][j]='z'
                     
         for i in range(r):  
-            if matrix[i][0]==0:
+            if matrix[i][0]=='z':
                 for j in range(c):
                     matrix[i][j]=0
                     
