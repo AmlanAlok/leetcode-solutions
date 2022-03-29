@@ -1,6 +1,6 @@
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
-        return self.ans2(numRows)
+        return self.p2(numRows)
     
         
     def ans1(self, numRows: int) -> List[List[int]]:
@@ -52,5 +52,30 @@ class Solution:
         
         return a
         
-    
+    def p2(self, numRows: int) -> List[List[int]]:
+        
+        n=numRows
+        a=[]
+        
+        if n>=1:
+            a.append([1])
+        if n>=2:
+            a.append([1,1])
+        
+        if n>2:
+            # print(a)
+            k=3
+            while k<=n: 
+                b = [None]*k
+                b[0], b[k-1] = 1, 1
+
+                for i in range(1,k-1):
+                    # print(a[k-1][i], a[k-1][i-1])
+                    # print(a[k-2][i, a[k-2][i-1])
+                    b[i] = a[k-2][i]+ a[k-2][i-1]
+
+                a.append(b)
+                k+=1
+        
+        return a
         
