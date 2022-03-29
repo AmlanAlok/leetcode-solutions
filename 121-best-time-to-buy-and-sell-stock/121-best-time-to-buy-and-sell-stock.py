@@ -2,6 +2,7 @@ class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         return self.p1(prices)
     
+    '''One Pass Two-Pointer Approach'''
     def ans_1(self, prices: List[int]) -> int:
         
         b = 0
