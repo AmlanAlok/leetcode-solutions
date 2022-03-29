@@ -1,0 +1,42 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        return self.ans_1(prices)
+    
+    def ans_1(self, prices: List[int]) -> int:
+        
+        b = 0
+        s = 0
+        m = 0
+        
+        for i in range(1, len(prices)):
+            
+            p = prices[i] - prices[b]
+            
+            if p > 0:
+                if p > m:
+                    m = p
+            
+            if p < 0:
+                b = i
+                
+        return m
+    
+    def p1(self, prices: List[int]) -> int:
+        
+        nums = prices
+        p=0
+        x=sys.maxsize
+        y=0
+        
+        for i in range(len(prices)):
+            
+            if nums[i]< x:
+                x = nums[i]
+            if nums[i]> y:
+                y = nums[i]
+            
+        if (y-x) >0:
+            return (y-x)
+        return p
+        
+        
