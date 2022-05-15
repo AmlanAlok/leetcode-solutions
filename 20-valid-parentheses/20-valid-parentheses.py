@@ -44,7 +44,7 @@ class Solution:
             x = s[i]
             
             if a:
-                if i>0 and ( (x==')' and a[-1]=='(') or 
+                if ( (x==')' and a[-1]=='(') or 
                             (x=='}' and a[-1]=='{') or 
                             (x==']' and a[-1]=='[') ):
                     a.pop()
