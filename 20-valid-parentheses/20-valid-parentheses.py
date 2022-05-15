@@ -37,21 +37,18 @@ class Solution:
 
     def p2(self, s: str) -> bool:
         
-        a=deque()
+        a = []
         
         for i in range(len(s)):
-            # print(i)
+
             x = s[i]
             
             if a:
-                if ( (x==')' and a[-1]=='(') or 
-                            (x=='}' and a[-1]=='{') or 
-                            (x==']' and a[-1]=='[') ):
+                if (x==')' and a[-1]=='(') or (x=='}' and a[-1]=='{') or (x==']' and a[-1]=='['): 
                     a.pop()
                     continue
                 
             a.append(x)
-            pass
             
         return len(a)==0
             
