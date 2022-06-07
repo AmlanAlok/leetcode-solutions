@@ -1,6 +1,6 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        return self.ans1(n)
+        return self.ans2(n)
     
     '''
     dynamic
@@ -18,3 +18,20 @@ class Solution:
         
         memo[n] = ans
         return ans
+    
+    
+    def ans2(self, n: int) -> int:
+        
+        if n < 3:
+            return n
+        
+        a = [None]*(n+1)
+        a[1] = 1
+        a[2] = 2
+        
+        for i in range(3, len(a)):
+            a[i] = a[i-1] + a[i-2]
+            
+        return a[n]
+        
+        
