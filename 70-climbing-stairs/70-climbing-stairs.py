@@ -2,6 +2,11 @@ class Solution:
     def climbStairs(self, n: int) -> int:
         return self.ans1(n)
     
+    '''
+    dynamic
+    TC = 2^n
+    SC = m+m = 2m = m
+    '''
     def ans1(self, n: int, memo = {}) -> int:
     
         if n in memo:
