@@ -19,7 +19,11 @@ class Solution:
         memo[n] = ans
         return ans
     
-    
+    '''
+    table
+    TC = n
+    SC = n
+    '''
     def ans2(self, n: int) -> int:
         
         if n < 3:
