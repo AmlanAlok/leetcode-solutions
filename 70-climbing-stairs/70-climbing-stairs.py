@@ -1,6 +1,6 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        return self.ans3(n)
+        return self.ans4(n)
     
     '''
     dynamic
@@ -38,12 +38,32 @@ class Solution:
             
         return a[n]
     
+    '''
+    Fibonnacci Number
+    TC = n
+    SC = 1
+    '''
     def ans3(self, n: int) -> int:
         
         prev, current = 1, 1
         
         for i in range(n-1):
             prev, current = current, prev + current
+    
+    '''
+    Fibonnacci Number
+    TC = n
+    SC = 1
+    '''
+    def ans4(self, n: int) -> int:
+        if n == 1:
+            return 1
+        prev, current = 1, 2 
+        
+        for i in range(2, n):
+            temp = current
+            current = current + prev
+            prev = temp
         
         return current
         
