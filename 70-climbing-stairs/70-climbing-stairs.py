@@ -1,6 +1,8 @@
+import math as m
+
 class Solution:
     def climbStairs(self, n: int) -> int:
-        return self.ans4(n)
+        return self.ans5(n)
     
     '''
     dynamic
@@ -66,5 +68,18 @@ class Solution:
             prev = temp
         
         return current
+    
+    '''
+    Fibonnacci Closed Form Expression
+    TC = log n
+    SC = 1
+    '''
+    def ans5(self, n: int) -> int:
         
+        sqrt5 = m.sqrt(5)
+        phi = (1+sqrt5)/2
+        psi = (1-sqrt5)/2
+        
+        ans = (m.pow(phi, n+1) - m.pow(psi, n+1))/sqrt5
+        return int(ans)
         
