@@ -1,6 +1,6 @@
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
-        return self.p2(numRows)
+        return self.p3(numRows)
     
         
     def ans1(self, numRows: int) -> List[List[int]]:
@@ -70,12 +70,37 @@ class Solution:
                 b[0], b[k-1] = 1, 1
 
                 for i in range(1,k-1):
-                    # print(a[k-1][i], a[k-1][i-1])
-                    # print(a[k-2][i, a[k-2][i-1])
                     b[i] = a[k-2][i]+ a[k-2][i-1]
 
                 a.append(b)
                 k+=1
         
         return a
+        
+    def p3(self, numRows: int) -> List[List[int]]:
+        
+        n = numRows
+        ans = []
+        
+        for i in range(n):
+            
+            a = []
+            
+            if i == 0:
+                a.append(1)
+            if i == 1:
+                a = [1, 1]
+            elif i>1:
+                a.append(1)
+                for j in range(1, i):
+                    a.append(ans[i-1][j] + ans[i-1][j-1])
+                
+                a.append(1)
+                    
+            ans.append(a)
+            
+        return ans
+            
+            
+        
         
