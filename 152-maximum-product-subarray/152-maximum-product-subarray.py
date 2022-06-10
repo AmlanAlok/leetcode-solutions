@@ -7,6 +7,11 @@ class Solution:
         amax, amin = nums[0], nums[0]
         ans = amax
         
+        t = math.prod(nums)
+        
+        if t > 0:
+            return t
+        
         for i in range(1, len(nums)):
             
             n = nums[i]
