@@ -1,6 +1,6 @@
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
-        return self.p3(numRows)
+        return self.p4(numRows)
     
         
     def ans1(self, numRows: int) -> List[List[int]]:
@@ -77,6 +77,7 @@ class Solution:
         
         return a
         
+    '''This code is not good'''
     def p3(self, numRows: int) -> List[List[int]]:
         
         n = numRows
@@ -101,6 +102,27 @@ class Solution:
             
         return ans
             
-            
+    def p4(self, numRows: int) -> List[List[int]]:
+        
+        n = numRows
+        a = []
+        
+        if n>=1:
+            a.append([1])
+        if n>=2:
+            a.append([1,1])
+        if n>2:
+            for i in range(3,n+1):
+                b = [None]*i
+                b[0], b[len(b)-1] = 1, 1
+                
+                for j in range(1, len(b)-1):
+                    # (i-1) is wrong and I have made this mistake multiple times
+                    # b[j] = a[i-1][j] + a[i-1][j-1]        
+                    b[j] = a[i-2][j] + a[i-2][j-1]
+                
+                a.append(b)
+                
+        return a
         
         
