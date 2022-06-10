@@ -7,10 +7,10 @@ class Solution:
         amax, amin = nums[0], nums[0]
         ans = amax
         
-        for i, n in enumerate(nums):
+        for i in range(1, len(nums)):
             
-            if i == 0:
-                continue
+            n = nums[i]
+            
             new_max = amax*n
             new_min = amin*n
             
