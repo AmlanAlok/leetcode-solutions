@@ -20,14 +20,7 @@ class Solution:
                 m = a
         
         return m
-            
-        
-#         if len(nums) == 0:
-            
-        
-#         for i in range(len(nums)):
-            
-#             p = ans1(nums[i:])
+
             
             
         
