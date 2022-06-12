@@ -19,16 +19,12 @@ class Solution:
         t = d[s[len(s)-1]]
         ans = 0
         
-        for i in range(len(s)-1, -1, -1):
+        for i in range(len(s)-2, -1, -1):
             
             c = s[i]
             if c in d:
                 
                 v = d[c]
-                
-                if i == len(s)-1:
-                    t = v
-                    continue
                 
                 v2 = d[s[i+1]]
                 
