@@ -75,7 +75,7 @@ class Solution:
         }
         
         arr = [1,4,5,9,10,40,50,90,100,400,500,900,1000]
-        t = []
+        t = ''
         
         i = len(arr)-1
         
@@ -84,15 +84,20 @@ class Solution:
             
             if n >= a:
                 n -= a
-                t.append(a)
+                t += d[a]
             
             if n < a:
                 i -= 1
+
+        return t
         
-        for i, v in enumerate(t):
-            t[i] = d[v]
+    
+    def ans3(self, num: int) -> str:
+        roman = {1000: 'M', 900: 'CM', 500: 'D', 400: 'CD', 100: 'C', 90: 'XC', 50: 'L', 40: 'XL', 10: 'X', 9: 'IX', 5: 'V', 4: 'IV', 1: 'I'}
+        numeral = ''
+        for i in roman:
+            # print(i, roman[i])
+            numeral += (num // i) * roman[i]
+            num %= i
         
-        return ''.join(t)
-        
-        
-        
+        return numeral
