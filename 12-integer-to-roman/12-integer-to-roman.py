@@ -1,6 +1,6 @@
 class Solution:
     def intToRoman(self, num: int) -> str:
-        return self.ans2(num)
+        return self.ans3(num)
     
     '''
     TC = 1, SC = 1
