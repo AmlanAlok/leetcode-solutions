@@ -1,3 +1,4 @@
+# Test Cases
 # 123
 # 12345
 # 2147483647
@@ -34,7 +35,6 @@ class Solution:
                 ans.insert(0, self.three(number) + titles.pop())
             else:
                 titles.pop()
-            # print(len(self.three(number))
         
         # print(ans)
         return ' '.join(ans)
@@ -74,8 +74,8 @@ class Solution:
                 
             i+=1
         
-        print('three')
-        print(st)
+        # print('three')
+        # print(st)
         
         return ' '.join(st)
                     
