@@ -1,41 +1,29 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        
-        return self.ans_2(s,t)
-        
-    # TC = O(n+m)
-    # SC = O(n+m)
-    # Runtime: 24 ms, faster than 99.89% of Python3 online submissions for Valid Anagram.
-    def ans_2(self, s: str, t: str) -> bool:
-        # if len(s) != len(t):
-        #     return False
-        
-        d = collections.Counter(t)
-        a = collections.Counter(s)
-        
-        if a != d:
-            return False
-        return True
+        return self.ans1(s, t)
     
-    # TC = O(n+m)
-    # SC = O(m)
-    def ans_1(self, s: str, t: str) -> bool:
+    def ans1(self, s: str, t: str) -> bool:
         
         if len(s) != len(t):
             return False
         
-        d = collections.Counter(t)
+        if len(s) > len(t):
+            s, t = t, s
+            
+        d = {}
         
-        for i in s:
-            if i not in d:
+        for c in s:
+            if c in d:
+                d[c] += 1
+            else:
+                d[c] = 1
+        
+        for c in t:
+            if c in d and d[c] > 0:
+                d[c] -= 1
+            else:
                 return False
-            
-            if d[i] <= 0:
-                return False
-            
-            d[i] -= 1
-            
+        
         return True
-            
-            
+                
         
