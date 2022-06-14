@@ -1,7 +1,14 @@
+from collections import Counter
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        return self.ans1(s, t)
+        return self.ans2(s, t)
     
+    
+    '''
+    TC = n
+    SC = n+m
+    '''
     def ans1(self, s: str, t: str) -> bool:
         
         if len(s) != len(t):
@@ -25,5 +32,10 @@ class Solution:
                 return False
         
         return True
+    
+    def ans2(self, s: str, t: str) -> bool:
+        source = Counter(s)
+        target = Counter(t)
+        return True if source == target else False
                 
         
