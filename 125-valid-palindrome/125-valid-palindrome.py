@@ -1,6 +1,6 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        return self.ans1(s)
+        return self.p1(s)
         
     def ans1(self, s: str) -> bool:
 
@@ -38,3 +38,40 @@ class Solution:
             
         return True
         
+    def ans2(self, s: str) -> bool:
+        
+        i, j = 0, len(s)-1
+        
+        while i<j:
+            
+            while i<j and not s[i].isalnum():
+                i+=1
+            while i<j and not s[j].isalnum():
+                j-=1
+            
+            if s[i].lower() != s[j].lower():
+                return False
+            
+            i+=1
+            j-=1
+            
+        return True
+    
+    def p1(self, s: str) -> bool:
+        
+        f = ''
+        
+        for c in s:
+            if ord(c) >= 65 and ord(c) <=90:
+                f += chr(ord(c) + 32)
+            if ord(c) >= 97 and ord(c) <=122 or ord(c) >= 48 and ord(c) <=57:
+                f += c
+            
+        rev = f[::-1]
+        
+        print(rev)
+        print(f)
+        return rev == f
+           
+           
+           
