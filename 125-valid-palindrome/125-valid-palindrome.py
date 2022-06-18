@@ -1,6 +1,6 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        return self.p1(s)
+        return self.ans2(s)
         
     def ans1(self, s: str) -> bool:
 
@@ -37,7 +37,11 @@ class Solution:
             j-=1
             
         return True
-        
+    '''
+    Two pointer
+    TC = n
+    SC = 1
+    '''
     def ans2(self, s: str) -> bool:
         
         i, j = 0, len(s)-1
@@ -57,7 +61,11 @@ class Solution:
             
         return True
     
-    def p1(self, s: str) -> bool:
+    '''
+    TC = n
+    SC = n
+    '''
+    def ans3(self, s: str) -> bool:
         
         f = ''
         
@@ -69,8 +77,8 @@ class Solution:
             
         rev = f[::-1]
         
-        print(rev)
-        print(f)
+        # print(rev)
+        # print(f)
         return rev == f
            
            
