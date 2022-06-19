@@ -1,6 +1,6 @@
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        return self.ans2(strs)
+        return self.ans3(strs)
     
     '''
     Horizontal scanning
@@ -59,4 +59,20 @@ class Solution:
         
         return ans
                 
-                
+    '''
+    Sorting Approach
+    TC = nlogn
+    SC = 
+    '''
+    def ans3(self, strs: List[str]) -> str:
+        res=''
+        n=len(strs)
+        strs.sort()     # TC = n log n
+        first=strs[0]
+        last=strs[n-1]
+        for i in range(len(first)):
+            if first[i]==last[i]:
+                res += first[i]
+            else:
+                break
+        return res 
