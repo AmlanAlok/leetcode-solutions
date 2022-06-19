@@ -1,9 +1,9 @@
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        return self.ans1(strs)
+        return self.ans2(strs)
     
     '''
-    HOrizontal scanning
+    Horizontal scanning
     TC = n
     SC = 1
     '''
@@ -28,4 +28,29 @@ class Solution:
                 
         return common
         
+    '''
+    Vertical Scanning
+    TC = n
+    SC = 1
+    '''
+    def ans2(self, strs: List[str]) -> str:
         
+        if len(strs) == 1:
+            return strs[0]
+        
+        ans = ''
+        
+        common = strs[0]
+        
+        for i in range(len(common)):
+            
+            for x in strs:
+                
+                if i >= len(x) or x[i] != common[i]:
+                    return ans
+            
+            ans += x[i]
+        
+        return ans
+                
+                
