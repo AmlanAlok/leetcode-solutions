@@ -42,6 +42,12 @@ class Solution:
         
         common = strs[0]
         
+        '''To find the shortest word in the list to reduce computation later'''
+        for x in strs:
+            if len(common) > len(x):
+                common = x
+        
+        '''Vertical comparision with the shortest word found earlier'''
         for i in range(len(common)):
             
             for x in strs:
