@@ -2,6 +2,11 @@ class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         return self.ans1(strs)
     
+    '''
+    HOrizontal scanning
+    TC = n
+    SC = 1
+    '''
     def ans1(self, strs: List[str]) -> str:
         
         if len(strs) == 1:
