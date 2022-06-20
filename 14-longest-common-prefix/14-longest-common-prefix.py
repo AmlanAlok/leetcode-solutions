@@ -1,6 +1,6 @@
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        return self.ans3(strs)
+        return self.ans4(strs)
     
     '''
     Horizontal scanning
@@ -75,4 +75,46 @@ class Solution:
                 res += first[i]
             else:
                 break
-        return res 
+        return res
+    
+    '''
+    Divide and Conquer
+    m - length of the word with largest length
+    n - length of the strs array
+    TC = m*n
+    SC = m*log n  
+    '''
+    def ans4(self, strs: List[str]) -> str:
+        return self.dc(strs, 0, len(strs)-1)
+    
+    def dc(self, strs, l, r):
+        if l == r:
+            return strs[l]
+        else:
+            mid = int((l+r)/2)
+            lcpLeft = self.dc(strs, l, mid)
+            lcpRight = self.dc(strs, mid+1, r)
+            return self.commonPrefix(lcpLeft, lcpRight)
+            
+    def commonPrefix(self, left, right):
+        
+        minL = min(len(left), len(right))
+        
+        for i in range(minL):
+            if left[i] != right[i]:
+                return left[:i]
+        
+        return left[:minL]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
