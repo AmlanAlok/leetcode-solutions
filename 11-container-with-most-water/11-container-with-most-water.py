@@ -20,9 +20,13 @@ class Solution:
                 maxv = area
                 
             if height[i] < height[j]:
-                i += 1
+                temp = height[i]
+                while height[i] <= temp and i<j:
+                    i += 1
             else:
-                j -= 1
+                temp = height[j]
+                while height[j] <= temp and i<j:
+                    j -= 1
         
         return maxv
             
