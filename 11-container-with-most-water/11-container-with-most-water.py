@@ -4,9 +4,7 @@ class Solution:
     
     def ans1(self, height: List[int]) -> int:
         
-        i = 0
-        j = len(height)-1
-        
+        i, j = 0, len(height)-1
         maxv = -1
         
         while i<j:
