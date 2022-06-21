@@ -5,7 +5,7 @@
 '''
 class Solution:
     def trap(self, height: List[int]) -> int:
-        return self.ans1(height)
+        return self.ans2(height)
     
     '''
     Two pointer
@@ -83,7 +83,11 @@ class Solution:
         
         return w
     
-    def fail2(self, h: List[int]) -> int:
+    '''
+    My answer
+    I was making the mistake of clubbing all the water within two high points ans then updating it when ching the max points
+    '''
+    def ans2(self, h: List[int]) -> int:
         
         i, j = 0, len(h)-1
         left_max, right_max = 0, 0
@@ -95,20 +99,20 @@ class Solution:
             p, q = h[i], h[j]
             
             if q > right_max:
-                w += rt
-                rt = 0
+                # w += rt
+                # rt = 0
                 right_max = q
             
             if q < right_max:
-                rt += right_max - q
+                w += right_max - q
                 
             if p > left_max:
-                w += lt
-                lt = 0
+                # w += lt
+                # lt = 0
                 left_max = p
                 
             if p < left_max:
-                lt += left_max - p
+                w += left_max - p
             
             if p >= q:
                 j-=1
