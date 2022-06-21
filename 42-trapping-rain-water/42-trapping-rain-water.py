@@ -86,6 +86,10 @@ class Solution:
     '''
     My answer
     I was making the mistake of clubbing all the water within two high points ans then updating it when ching the max points
+    
+    Two pointer
+    TC = n
+    SC = 1
     '''
     def ans2(self, h: List[int]) -> int:
         
