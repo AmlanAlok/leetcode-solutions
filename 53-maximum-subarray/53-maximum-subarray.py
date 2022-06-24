@@ -6,7 +6,7 @@
 '''
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        return self.p1(nums)
+        return self.p2(nums)
     
     '''
     TC = n
@@ -27,6 +27,11 @@ class Solution:
         
         return m
 
+    '''
+    TC = n
+    SC = 1
+    ans1 is better solution as it does not use else
+    '''
     def p1(self, nums: List[int]) -> int:
         
         maxv = -sys.maxsize
@@ -44,5 +49,23 @@ class Solution:
             
         return maxv
             
+    def p2(self, nums: List[int]) -> int:
+        
+        t = 0
+        m = -sys.maxsize
+        
+        for n in nums:
+            
+            t += n
+            
+            if n > t:
+                t = n
+            if t > m:
+                m = t
+        
+        return m
+        
+        
+        
         
         
