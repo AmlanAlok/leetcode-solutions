@@ -49,6 +49,10 @@ class Solution:
             
         return maxv
             
+    '''
+    TC = n
+    SC = 1
+    '''
     def p2(self, nums: List[int]) -> int:
         
         t = 0
