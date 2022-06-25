@@ -20,9 +20,8 @@ SC = 1
 def ans1(target: int, nums: List[int]) -> int:
     
     m = sys.maxsize
-    i, j = 0, 0
+    i = j = s = 0
     l = len(nums)
-    s = 0
     
     while j < l:
         
