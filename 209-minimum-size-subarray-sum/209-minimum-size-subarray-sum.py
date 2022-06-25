@@ -10,7 +10,7 @@
 '''
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-        return ans2(target, nums)
+        return ans1(target, nums)
     
 '''
 Two Pointer/ Sliding Window
