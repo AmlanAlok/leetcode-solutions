@@ -10,7 +10,7 @@
 '''
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-        return ans1(target, nums)
+        return ans2(target, nums)
     
 '''
 Two Pointer/ Sliding Window
@@ -36,6 +36,20 @@ def ans1(target: int, nums: List[int]) -> int:
             i+=1
         
     return 0 if m == sys.maxsize else m
+
+def ans2(target: int, nums: List[int]) -> int:
+    
+    total = left = right = 0
+    res = len(nums) + 1
+
+    while right < len(nums):
+        total += nums[right]
+        while total >= target:
+            res = min(res, right-left+1)
+            total -= nums[left]
+            left += 1
+        right += 1
+    return res if res <= len(nums) else 0 
         
             
         
