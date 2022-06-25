@@ -19,6 +19,10 @@ class Solution:
     def lengthOfLongestSubstringKDistinct(self, s: str, k: int) -> int:
         return ans1(s, k)
     
+'''
+TC = 1
+SC = k+1
+'''
 def ans1(s: str, k: int) -> int:
     
     i = j = a = 0
