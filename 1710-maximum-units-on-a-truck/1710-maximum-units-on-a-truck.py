@@ -7,7 +7,12 @@
 class Solution:
     def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:
         return ans1(boxTypes, truckSize)
-    
+
+'''
+Sorted Array
+TC = n log n 
+SC = 1
+'''
 def ans1(numsList, t):
     
     l = len(numsList)
