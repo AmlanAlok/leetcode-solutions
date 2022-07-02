@@ -31,7 +31,7 @@ def ans1(numsList, t):
         x, y = numsList[row][0], numsList[row][1]
         
         if x > 0:
-            if x <= t:      # I did not add this to speed up the logic
+            if x <= t:      # I did not add this to speed up the logic earlier
                 numsList[row][0] = 0
                 xsum += x*y
                 t -= x
