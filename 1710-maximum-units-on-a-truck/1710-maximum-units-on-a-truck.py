@@ -31,9 +31,14 @@ def ans1(numsList, t):
         x, y = numsList[row][0], numsList[row][1]
         
         if x > 0:
-            numsList[row][0] -= 1
-            xsum += y
-            t -= 1
+            if x <= t:
+                numsList[row][0] = 0
+                xsum += x*y
+                t -= x
+            else:
+                numsList[row][0] -= 1
+                xsum += y
+                t -= 1
         if x == 0:
             row += 1
             
