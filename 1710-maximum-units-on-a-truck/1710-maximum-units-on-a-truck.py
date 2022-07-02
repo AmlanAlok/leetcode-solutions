@@ -18,7 +18,8 @@ def ans1(numsList, t):
     l = len(numsList)
     
     # O(n log n)
-    numsList = sorted(numsList, key= lambda nums: nums[1], reverse = True)
+    # numsList = sorted(numsList, key= lambda nums: nums[1], reverse = True)
+    numsList.sort(key= lambda nums: nums[1], reverse = True)
     
     row = 0
     xsum = 0
