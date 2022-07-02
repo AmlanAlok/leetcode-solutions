@@ -6,7 +6,7 @@
 '''
 class Solution:
     def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:
-        return ans1(boxTypes, truckSize)
+        return ans2(boxTypes, truckSize)
 
 '''
 Sorted Array
@@ -34,6 +34,22 @@ def ans1(numsList, t):
             row += 1
             
     return xsum
+
+def ans2(boxTypes: List[List[int]], truckSize: int):
+    boxTypes.sort(key = lambda x: x[1],reverse=True)
+    n = len(boxTypes)
+    final = 0
+    for i in range(n):
+        boxes, units= boxTypes[i]
+        if truckSize >= boxes:
+            truckSize -= boxes
+            final += boxes*units
+        elif truckSize < boxes:
+            while truckSize > 0 and boxes > 0:
+                truckSize -= 1
+                boxes -= 1
+                final += units
+    return final
             
 
 ''' Recursion - Not working rn'''    
