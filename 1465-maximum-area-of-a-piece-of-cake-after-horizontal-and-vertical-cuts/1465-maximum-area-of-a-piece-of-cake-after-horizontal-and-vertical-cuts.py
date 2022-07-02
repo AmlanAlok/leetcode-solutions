@@ -20,6 +20,10 @@ class Solution:
     def maxArea(self, h: int, w: int, horizontalCuts: List[int], verticalCuts: List[int]) -> int:
         return ans1(h, w, horizontalCuts, verticalCuts)
     
+'''
+TC = n + n log n
+SC = 1
+'''
 def ans1(h, w, hnums, vnums):
     
     hmax = vmax = 0
