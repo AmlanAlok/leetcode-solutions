@@ -6,7 +6,7 @@
 '''
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
-        return ans2(nums)
+        return ans1(nums)
 
 '''
 TC = n + n = n
