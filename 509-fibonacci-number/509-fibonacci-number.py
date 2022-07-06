@@ -1,6 +1,6 @@
 class Solution:
     def fib(self, n: int) -> int:
-        return ans1(n)
+        return ans2(n)
     
 def ans1(n):
     
@@ -18,6 +18,20 @@ def ans1(n):
         i+=1
         
     return a[n]
+
+def ans2(n, memo={}):
+    
+    if n in memo:
+        return memo[n]
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    
+    memo[n] = ans2(n-1, memo) + ans2(n-2, memo)
+    
+    return memo[n] 
+    
     
         
         
