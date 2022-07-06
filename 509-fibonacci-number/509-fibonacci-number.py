@@ -1,6 +1,6 @@
 class Solution:
     def fib(self, n: int) -> int:
-        return ans1(n)
+        return ans4(n)
 
 '''
 Bottom up
@@ -56,6 +56,25 @@ def ans3(n, memo={0:0,1:1}):
     
     return memo[n] 
     
+    
+def ans4(n):
+    
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    
+    a, b = 0, 1
+    
+    i = 2
+    
+    while i <= n:
+        
+        c = a + b
+        a, b = b, c
+        i+=1
+    
+    return c
     
         
         
