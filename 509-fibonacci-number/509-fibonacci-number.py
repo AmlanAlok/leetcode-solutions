@@ -56,7 +56,10 @@ def ans3(n, memo={0:0,1:1}):
     
     return memo[n] 
     
-    
+'''
+TC = n
+SC = 1
+'''
 def ans4(n):
     
     if n == 0:
