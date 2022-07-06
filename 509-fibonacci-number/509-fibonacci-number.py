@@ -1,6 +1,6 @@
 class Solution:
     def fib(self, n: int) -> int:
-        return ans3(n)
+        return ans2(n)
 
 '''
 Bottom up
