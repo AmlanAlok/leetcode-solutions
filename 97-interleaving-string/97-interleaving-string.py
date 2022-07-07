@@ -62,11 +62,6 @@ def ans2(s1, s2, s3,i, j, k, memo, z=''):
     else:
         memo[(i,j)] = False
         return False
-        
-        
-    
-    
-    
     
 def ans1(s1, s2, s3):
     
