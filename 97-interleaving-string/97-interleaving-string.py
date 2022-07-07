@@ -35,6 +35,11 @@ class Solution:
         # return ans2(s1, s2, s3, len(s1)-1, len(s2)-1, 0)
         return ans2(s1, s2, s3, 0, 0, 0, memo, '')
     
+'''
+DP
+TC = m*n
+SC = m*n
+'''
 def ans2(s1, s2, s3,i, j, k, memo, z=''):
     
     # print( s1,s2,s3)
@@ -63,6 +68,10 @@ def ans2(s1, s2, s3,i, j, k, memo, z=''):
         memo[(i,j)] = False
         return False
     
+'''
+My initial attempt - incorrect approach
+MIssed edge case scenario
+'''
 def ans1(s1, s2, s3):
     
     i, j, k = 0, 0, 0
