@@ -10,8 +10,11 @@
 '''
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
-        
-        return p(s) == p(t)
+        return ans1(s, t)
+
+
+def ans1(s, t):
+    return p(s) == p(t)
         
 
 def p(s):
