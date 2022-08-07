@@ -53,6 +53,10 @@ class Solution:
         
         return []
     
+    '''
+    TC = n
+    SC = n
+    '''
     def p3(self, nums: List[int], target: int) -> List[int]:
         
         d = {}
