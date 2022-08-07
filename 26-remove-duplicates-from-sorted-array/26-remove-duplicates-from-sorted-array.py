@@ -2,6 +2,10 @@ class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         return ans1(nums)
     
+'''
+TC = n
+SC = 1
+'''
 def ans1(nums):
     
     i, j = 0, 1
