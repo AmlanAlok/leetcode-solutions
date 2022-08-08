@@ -1,7 +1,12 @@
+'''
+[-1,0,1,2,-1,-4]
+[0,1,1]
+[0,0,0]
+'''
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         
-        return self.ans1(nums)
+        return self.p1(nums)
     
     # A1 - 2 pointers
     def ans1(self, nums: List[int]) -> List[List[int]]:
@@ -210,5 +215,38 @@ class Solution:
     x = (nums[k],c,nums[i])
     ans.add(tuple(sorted(x)))
     '''
+    
+    
+    '''
+    TypeError: unhashable type: 'list'
+    '''
+    
+    
+    def p1(self, nums: List[int]) -> List[List[int]]:
+        
+        i = 0
+        n = len(nums)
+        ans = set()
+        
+        while i < n:
+            
+            d1 = {}
+            j = 0
+            
+            while j < n and i != j:
+                
+                c = (nums[i]+nums[j])*-1
+                
+                if c in d1 and d1[c] != i and d1[c] != j:
+                    ans.add(tuple(sorted([nums[i], nums[j], c])))
+                else:
+                    d1[nums[j]]=j
+                
+                j+=1
+            
+            i+=1
+            
+        return list(ans)
+        
     
     
