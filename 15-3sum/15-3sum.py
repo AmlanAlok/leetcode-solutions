@@ -13,6 +13,7 @@ class Solution:
     
     '''
     A1 - 2 pointers
+    This approach is the fastest as it skips duplicates
     '''
     def ans1(self, nums: List[int]) -> List[List[int]]:
         
@@ -25,7 +26,7 @@ class Solution:
         
         for k in range(len(nums)-2):
             
-            if nums[k]==m:
+            if nums[k]==m:      # this helps to skip duplicates
                 continue
                 
             i = k+1
@@ -53,7 +54,8 @@ class Solution:
                     i+=1
                     j-=1
                     
-                    while i<j and nums[i]==nums[i-1]:
+                    # this helps to skip duplicates
+                    while i<j and nums[i]==nums[i-1]:   
                         i+=1                    
 
             m = nums[k]
