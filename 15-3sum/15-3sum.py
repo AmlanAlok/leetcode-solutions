@@ -11,7 +11,9 @@ class Solution:
         
         return self.ans1(nums)
     
-    # A1 - 2 pointers
+    '''
+    A1 - 2 pointers
+    '''
     def ans1(self, nums: List[int]) -> List[List[int]]:
         
         if len(nums) == 0:
@@ -111,7 +113,9 @@ class Solution:
 
         return a
     
-    # Approach 2 - Using hashmap
+    '''
+    Approach 2 - Using hashmap
+    '''
     def ans2(self, nums: List[int]) -> List[List[int]]:
         
         nums.sort()
@@ -162,8 +166,9 @@ class Solution:
                     k+=1
         
         return ans
-    
-    # A3 - If sorting is not allowed, how will you track and manage duplication
+    '''
+    A3 - If sorting is not allowed, how will you track and manage duplication
+    '''
     def ans3(self, nums: List[int]) -> List[List[int]]:
         
         
