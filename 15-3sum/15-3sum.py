@@ -2,11 +2,14 @@
 [-1,0,1,2,-1,-4]
 [0,1,1]
 [0,0,0]
+[-1,0,1,2,-1,-4,2]
+[-4,2,2]
+[0,0,0,0]
 '''
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         
-        return self.p1(nums)
+        return self.ans3(nums)
     
     # A1 - 2 pointers
     def ans1(self, nums: List[int]) -> List[List[int]]:
@@ -16,7 +19,7 @@ class Solution:
         
         nums.sort()
         ans = []
-        m = nums[0]-1
+        m = nums[0]-1   # so that there is no match
         
         for k in range(len(nums)-2):
             
