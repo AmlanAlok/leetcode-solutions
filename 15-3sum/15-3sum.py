@@ -9,7 +9,7 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         
-        return self.ans3(nums)
+        return self.ans2(nums)
     
     # A1 - 2 pointers
     def ans1(self, nums: List[int]) -> List[List[int]]:
