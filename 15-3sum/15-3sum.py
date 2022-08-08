@@ -230,8 +230,10 @@ class Solution:
     '''
     TypeError: unhashable type: 'list'
     '''
-    
-    
+    '''
+    TC = n^2
+    SC = n
+    '''
     def p1(self, nums: List[int]) -> List[List[int]]:
         
         i = 0
