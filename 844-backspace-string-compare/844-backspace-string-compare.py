@@ -85,6 +85,7 @@ def p(s):
 
 
 
+'''From LC Solutions'''
 
 def ans9():
     def f(string, pointer):
@@ -138,5 +139,3 @@ def ans9():
                 return True
             if s[l] != '#':
                 return False
-        
-        
